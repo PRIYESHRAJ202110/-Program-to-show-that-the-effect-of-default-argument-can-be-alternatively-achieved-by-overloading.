@@ -1,0 +1,62 @@
+//The Effect of a default argument can be alternatively achieved
+//by overloading with an example.
+
+#include<iostream>
+using namespace std;
+int main()
+{
+int sum(int,int); //function with 2 argument
+int sum(int,int,int,int); //function with 4 argument
+int sum(int[],int); //function with n argument
+
+int num1,num2,c,d,result;
+
+cout<<"\n\nfor 2 argument\n";
+cout<<"Enter 2 Integers\n";
+cin>>num1>>num2;
+result=sum(num1,num2);
+cout<<"Addition =" << result;
+
+
+cout<< "\n\nfor 4 argument\n";
+cout<<"Enter 4 Integers\n";
+cin>>num1 >> num2 >> c >> d;
+result=sum(num1,num2,c,d);
+cout<<"Addition =" << result;
+
+
+cout<<"\n\nHow many Argument You want to enter:-";
+int no;
+cin>>no;
+int num[50];
+cout<<"Enter "<< no <<" Integers\n";
+for(int i=0;i < no ;i++)
+cin>>num[i];
+result=sum(num,no);
+cout<<"Addition =" << result;
+
+}
+
+
+//function with 2 argument
+int sum(int num1,int num2)
+{
+return(num1+num2);
+}
+
+//function with 4 argument
+int sum(int num1,int num2,int c,int d)
+{
+return(num1+num2+c+d);
+}
+
+//function with n argument
+int sum(int a[],int n)
+{
+int sum=0;
+for(int i=0;i < n;i++)
+{
+sum=sum+a[i];
+}
+return(sum);
+}
